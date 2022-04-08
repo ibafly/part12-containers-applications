@@ -1,0 +1,105 @@
+Script started on 2022-04-07 22:48:47+08:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="108" LINES="34"]
+]4;0;rgb:2e/2a/31\]4;1;rgb:d8/13/7f\]4;2;rgb:17/ad/98\]4;3;rgb:dc/8a/0e\]4;4;rgb:79/6a/f5\]4;5;rgb:bb/60/ea\]4;6;rgb:14/9b/da\]4;7;rgb:bc/ba/be\]4;8;rgb:83/80/85\]4;9;rgb:d8/13/7f\]4;10;rgb:17/ad/98\]4;11;rgb:dc/8a/0e\]4;12;rgb:79/6a/f5\]4;13;rgb:bb/60/ea\]4;14;rgb:14/9b/da\]4;15;rgb:f5/f4/f7\]4;16;rgb:d6/54/07\]4;17;rgb:c7/20/ca\]4;18;rgb:4a/46/4d\]4;19;rgb:66/63/69\]4;20;rgb:9f/9d/a2\]4;21;rgb:d8/d7/da\]10;rgb:bc/ba/be\]11;rgb:2e/2a/31\]12;7\[1m[7m%[27m[1m[0m                                                                                                            ]0;iiba@mina: ~/part12-containers-applications/todo-app/todo-backend[0m[27m[24m[J[1;32m:)[0m 
+
+[35m[0m[1;36m [0m[1;36mpart12-containers-applications/todo-app/todo-backend[0m[1;36m [0mon [1;35m [0m[1;35mmain[0m [1;31m[[0m[1;31m![0m[1;31m?[0m[1;31m⇡[0m[1;31m][0m via [1;32m [0m[1;32mv14.19.1[0m[1;32m [0m
+
+[35m﬌ [0m[K[?1h=[?2004h
+bck-i-search: _[K[A[13Ddocker-compose -f docker-compose.dev.yml down --vol[4mu[24mmes[1B[43Du_[A[37C[10D[4mu[4mp[24m --build[24m    [1B[42Dp_[A[26C[24mu[24mp[1B[K[A[53C -[4A[0m[27m[24m[J[1;32m:)[0m 
+
+[35m[0m[1;36m [0m[1;36mpart12-containers-applications/todo-app/todo-backend[0m[1;36m [0mon [1;35m [0m[1;35mmain[0m [1;31m[[0m[1;31m![0m[1;31m?[0m[1;31m⇡[0m[1;31m][0m via [1;32m [0m[1;32mv14.19.1[0m[1;32m [0m
+
+[35m﬌ [0mdocker-compose -f docker-compose.dev.yml up --build -[K[A[A[7A[0m[27m[24m[J[1;32m:)[0m 
+
+[35m[0m[1;36m [0m[1;36mpart12-containers-applications/todo-app/todo-backend[0m[1;36m [0mon [1;35m [0m[1;35mmain[0m [1;31m[[0m[1;31m![0m[1;31m?[0m[1;31m⇡[0m[1;31m][0m via [1;32m [0m[1;32mv14.19.1[0m[1;32m [0m
+
+[35m﬌ [0mdocker-compose -f docker-compose.dev.yml up --build -
+[K
+[K[A[A[55Cd[?1l>[?2004l
+]0;iiba@mina: docker-compose -f docker-compose.dev.yml up --build -d[1A[1B[0G[?25l[+] Running 1/0
+[34m ⠿ Network todo-backend_default    Created                                                             0.1s
+[0m[37m ⠋ Container todo-backend-mongo-1  Creating                                                            0.0s
+[0m[?25h[1A[1A[1A[0G[?25l[34m[+] Running 2/2[0m
+[34m ⠿ Network todo-backend_default    Created                                                             0.1s
+[0m[34m ⠿ Container todo-backend-mongo-1  Created                                                             0.1s
+[0m[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+[34m ⠿ Network todo-backend_default    Created                                                             0.1s
+[0m[37m ⠿ Container todo-backend-mongo-1  Starting                                                            0.2s
+[0m[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+[34m ⠿ Network todo-backend_default    Created                                                             0.1s
+[0m[37m ⠿ Container todo-backend-mongo-1  Starting                                                            0.3s
+[0m[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+[34m ⠿ Network todo-backend_default    Created                                                             0.1s
+[0m[37m ⠿ Container todo-backend-mongo-1  Starting                                                            0.4s
+[0m[?25h[1A[1A[1A[0G[?25l[34m[+] Running 2/2[0m
+[34m ⠿ Network todo-backend_default    Created                                                             0.1s
+[0m[34m ⠿ Container todo-backend-mongo-1  Started                                                             0.5s
+[0m[?25h[1m[7m%[27m[1m[0m                                                                                                            ]0;iiba@mina: ~/part12-containers-applications/todo-app/todo-backend[0m[27m[24m[J[1;32m:)[0m 
+
+[35m[0m[1;36m [0m[1;36mpart12-containers-applications/todo-app/todo-backend[0m[1;36m [0mon [1;35m [0m[1;35mmain[0m [1;31m[[0m[1;31m![0m[1;31m?[0m[1;31m⇡[0m[1;31m][0m via [1;32m [0m[1;32mv14.19.1[0m[1;32m [0m
+
+[35m﬌ [0m[K[?1h=[?2004h
+bck-i-search: _[K[A[13Ddocker-compose -f docker-compose.d[4me[24mv.yml up --build -d[1B[42De_[A[20C[34D[4me[4mx[24mit                              [24m                    [1B[41Dx_[A[15D[24md[24mocker [4mexe[24mc -it todo-backend-mongo-1 bash[1B[27De_[A[9D[2C[4me[4mc[24m[1B[4Cc_[A[10D[24me[24mx[24me[24mc[1B[K[A[9C[?1l>[?2004l[1B]0;iiba@mina: docker exec -it todo-backend-mongo-1 bash]0;root@5c178094aab4: /root@5c178094aab4:/# mongo -u root -p example
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("5b2b8e1a-e57c-4cea-a4ca-433528b58209") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+	https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+	https://community.mongodb.com
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs[3G[Jshow dbs[11G
+admin         0.000GB
+config        0.000GB
+local         0.000GB
+the_database  0.000GB
+> use data[3G[Juse DataConsistencyChecker([30G[3G[Juse DataConsistencyChecker[29G[3G[Juse DataConsistencyChecke[28G[3G[Juse DataConsistencyCheck[27G[3G[Juse DataConsistencyChec[26G[3G[Juse DataConsistencyChe[25G[3G[Juse DataConsistencyCh[24G[3G[Juse DataConsistencyC[23G[3G[Juse DataConsistency[22G[3G[Juse DataConsistenc[21G[3G[Juse DataConsisten[20G[3G[Juse DataConsiste[19G[3G[Juse DataConsist[18G[3G[Juse DataConsis[17G[3G[Juse DataConsi[16G[3G[Juse DataCons[15G[3G[Juse DataCon[14G[3G[Juse DataCo[13G[3G[Juse DataC[12G[3G[Juse Data[11G[3G[Juse Dat[10G[3G[Juse Da[9G[3G[Juse D[8G[3G[Juse [7GtheC[3G[Juse the[10G_database[3G[Juse the_database[19G
+switched to db the_database
+> show col[3G[Jshow CollInfos([18G[3G[Jshow CollInfos[17G[3G[Jshow CollInfo[16G[3G[Jshow CollInf[15G[3G[Jshow CollIn[14G[3G[Jshow CollI[13G[3G[Jshow Coll[12G[3G[Jshow Col[11G[3G[Jshow Co[10G[3G[Jshow C[9G[3G[Jshow [8Gcollections[3G[Jshow collections[19G
+todos
+> db..[3G[Jdb.[6Gtodo[3G[Jdb.todos[11G.fin[3G[Jdb.todos.find[16G({})[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("624ec335c681b9409a614a5a"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("624ec335c681b9409a614a5b"), "text" : "Learn about containers", "done" : false }
+{ "_id" : ObjectId("624ee42896baf751961f4c14"), "text" : "Finish full stack open", "done" : false, "__v" : 0 }
+> db.to[3G[Jdb.to[8G
+db.toLocaleString  db.toString(       db.todos           db.tojson(
+> [3G[Jdb.to[8Gd[3G[Jdb.todos[11G.insertOne({"text":"Increase the number of tools in  [3G[Jdb.todos.insertOne({"text":"Increase the number of tools in [63Gmy toolbelt", [3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt",[76G"done":false})[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt","done":false})[90G
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("624efc0cc7cf71620e6689f5")
+}
+> db.todo[3G[Jdb.todos[11G.[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt","done":false})[90G[3G[Jdb.todos.find({})[20G[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("624ec335c681b9409a614a5a"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("624ec335c681b9409a614a5b"), "text" : "Learn about containers", "done" : false }
+{ "_id" : ObjectId("624ee42896baf751961f4c14"), "text" : "Finish full stack open", "done" : false, "__v" : 0 }
+{ "_id" : ObjectId("624efc0cc7cf71620e6689f5"), "text" : "Increase the number of tools in my toolbelt", "done" : false }
+> exit[3G[Jexit[7G
+bye
+]0;root@5c178094aab4: /root@5c178094aab4:/# exit
+exit
+[1m[7m%[27m[1m[0m                                                                                                            ]0;iiba@mina: ~/part12-containers-applications/todo-app/todo-backend[0m[27m[24m[J[1;32m:)[0m took [1;33m9m56s[0m 
+
+[35m[0m[1;36m [0m[1;36mpart12-containers-applications/todo-app/todo-backend[0m[1;36m [0mon [1;35m [0m[1;35mmain[0m [1;31m[[0m[1;31m![0m[1;31m?[0m[1;31m⇡[0m[1;31m][0m via [1;32m [0m[1;32mv14.19.1[0m[1;32m [0m
+
+[35m﬌ [0m[K[?1h=[?2004heexit[?1l>[?2004l
+]0;iiba@mina: exit
+Script done on 2022-04-07 22:59:10+08:00 [COMMAND_EXIT_CODE="0"]
