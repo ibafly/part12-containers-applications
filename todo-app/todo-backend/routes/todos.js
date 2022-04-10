@@ -21,8 +21,8 @@ router.post("/", async (req, res) => {
   })
   res.send(todo)
 
-  const counter = await redis.getAsync('todoCounter')
-  await redis.setAsync('todoCounter', counter?Number(counter)+1:1)
+  const counter = await redis.getAsync("todoCounter")
+  await redis.setAsync("todoCounter", counter ? Number(counter) + 1 : 1)
 })
 
 const singleRouter = express.Router()
@@ -51,7 +51,7 @@ singleRouter.put("/", async (req, res) => {
   const updatedTodo = await req.todo.updateOne(
     {
       text: req.body.text,
-      done: false,
+      done: req.body.done,
     },
     { new: true }
   )
