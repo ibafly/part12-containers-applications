@@ -59,3 +59,9 @@ typings/
 
 # next.js build output
 .next
+
+# data generated in Docker
+*_data/
+
+# used by vscode extention to test restful api
+*.rest
