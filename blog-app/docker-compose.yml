@@ -1,16 +1,32 @@
 version: '3.8'
 
 services:
+  server:
+    image: blog-app-backend
+    container_name: blog-app-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 3004:3003
+        #environment:
+      #      PORT: 3003
+      #      MONGO_URL: mongodb://the_username:the_password@mongo:27017/the_database
+      #      REDIS_URL: //redis:6379
+    command: yarn start
+    volumes:
+      - ./backend:/usr/scr/app
+
   app:
-    image: blog-app-frontend-dev
-    container_name: blog-app-frontend-dev
+    image: blog-app-frontend
+    container_name: blog-app-frontend
     build:
       context: ./frontend
-      dockerfile: dev.Dockerfile
+      dockerfile: Dockerfile
     volumes:
       - ./frontend:/usr/src/app
     ports:
-      - 5000:3000
+      - 5000:80
 
       #  mongo:
       #    image: mongo
@@ -30,28 +46,13 @@ services:
       #    command: ['redis-server', '--appendonly', 'yes'] # Overwrite the CMD
       #    volumes: # Declare the volume
       #      - ./blog-app-backend/redis_data:/data
-  server:
-    image: blog-app-backend-dev
-    container_name: blog-app-backend-dev
-    build:
-      context: ./backend
-      dockerfile: dev.Dockerfile
-    ports:
-      - 3003:3003
-        #environment:
-      #      PORT: 3003
-      #      MONGO_URL: mongodb://the_username:the_password@mongo:27017/the_database
-      #      REDIS_URL: //redis:6379
-    command: yarn dev
-    volumes:
-      - ./backend:/usr/scr/app
 
   nginx:
     image: nginx
     volumes:
-      - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
       - 8080:80
-    container_name: blog-app-dev-reverse-proxy
+    container_name: blog-app-reverse-proxy
     depends_on:
       - app # wait for the frontend container to be started

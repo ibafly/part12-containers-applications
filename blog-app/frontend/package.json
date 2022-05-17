@@ -21,7 +21,7 @@
     "server": "json-server -p3001 db.json",
     "eslint": "eslint .",
     "cypress:open": "cypress open",
-	"test:e2e": "cypress run"
+    "test:e2e": "cypress run"
   },
   "eslintConfig": {
     "extends": [
@@ -41,11 +41,11 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://blog-app-backend-dev:3003",
   "devDependencies": {
     "cypress": "^9.2.0",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-jest": "^25.3.2",
+    "http-proxy-middleware": "^2.0.6",
     "react-error-overlay": "^6.0.10"
   }
 }

@@ -6,6 +6,15 @@ const helper = require("./test_helper")
 
 const User = require("../models/user")
 
+const db = mongoose.connection
+db.once("open", () => {
+  console.log("Database connected!!")
+})
+
+db.on("error", err => {
+  console.error("connection error:", err)
+})
+
 beforeEach(async () => {
   await User.deleteMany({})
 
@@ -22,7 +31,8 @@ describe("when there is initially one user in db", () => {
       password: "meowmeow",
     }
 
-    const res = await api.post("/api/users").send(newUserInfo).expect(201)
+    //const res = await api.post("/api/users").send(newUserInfo).expect(201)
+    const res = await api.post("/users").send(newUserInfo).expect(201)
 
     const usersAtEnd = await helper.usersInDb()
     const usernames = usersAtEnd.map(user => user.username)
@@ -43,10 +53,12 @@ describe("when there is initially one user in db", () => {
       password: "",
     }
 
-    const res1 = await api.post("/api/users").send(newUser1).expect(400)
+    //const res1 = await api.post("/api/users").send(newUser1).expect(400)
+    const res1 = await api.post("/users").send(newUser1).expect(400)
     expect(res1.body.error).toContain("`username` is required")
 
-    const res2 = await api.post("/api/users").send(newUser2).expect(400)
+    //const res2 = await api.post("/api/users").send(newUser2).expect(400)
+    const res2 = await api.post("/users").send(newUser2).expect(400)
     expect(res2.body.error).toContain(
       "password is missing or less than 3 characters"
     )
@@ -64,12 +76,14 @@ describe("when there is initially one user in db", () => {
       password: "ny",
     }
 
-    const res1 = await api.post("/api/users").send(newUser1).expect(400)
+    //const res1 = await api.post("/api/users").send(newUser1).expect(400)
+    const res1 = await api.post("/users").send(newUser1).expect(400)
     expect(res1.body.error).toContain(
       "shorter than the minimum allowed length (3)"
     )
 
-    const res2 = await api.post("/api/users").send(newUser2).expect(400)
+    //const res2 = await api.post("/api/users").send(newUser2).expect(400)
+    const res2 = await api.post("/users").send(newUser2).expect(400)
     expect(res2.body.error).toContain(
       "password is missing or less than 3 characters"
     )
@@ -81,7 +95,8 @@ describe("when there is initially one user in db", () => {
       name: "Neko",
       password: "nyanya",
     }
-    const res = await api.post("/api/users").send(newUser).expect(400)
+    //const res = await api.post("/api/users").send(newUser).expect(400)
+    const res = await api.post("/users").send(newUser).expect(400)
     expect(res.body.error).toContain("`username` to be unique")
   })
 })

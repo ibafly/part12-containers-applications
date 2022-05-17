@@ -7,6 +7,15 @@ const helper = require("./test_helper")
 const Blog = require("../models/blog")
 const User = require("../models/user")
 
+const db = mongoose.connection
+db.once("open", () => {
+  console.log("Database connected!!")
+})
+
+db.on("error", err => {
+  console.error("connection error:", err)
+})
+
 beforeEach(async () => {
   await Blog.deleteMany({})
   await Blog.insertMany(helper.initialBlogs)
@@ -17,7 +26,8 @@ beforeEach(async () => {
 describe("initial blogs", () => {
   test("are returned as JSON && there are 6 blogs initially && id property is named 'id'", async () => {
     const res = await api
-      .get("/api/blogs")
+      //.get("/api/blogs")
+      .get("/blogs")
       .expect(200)
       .expect("Content-Type", /application\/json/)
 
@@ -32,13 +42,15 @@ describe("initial blogs", () => {
 describe("addition of a new blog", () => {
   test("succeeds with right user token (logged in user)", async () => {
     const rootUser = { username: "root", password: "himitsu" }
-    const result = await api.post("/api/login").send(rootUser).expect(200)
+    //const result = await api.post("/api/login").send(rootUser).expect(200)
+    const result = await api.post("/login").send(rootUser).expect(200)
     const token = result.body.token
     const authorization = `bearer ` + token
     // bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjYxYzZhZTMwMWJmNmZiYjRlZThjMTM5YyIsImlhdCI6MTY0MDQxMDY3NX0.Nvv-GxYqrRKckXICb7yaApo4qXIKRgwLHKogQ6DUFIU
 
     const res = await api
-      .post("/api/blogs")
+      //.post("/api/blogs")
+      .post("/blogs")
       .set("Authorization", authorization)
       .send(helper.aNewBlogWithContentAndNoLikes)
       .expect(201)
@@ -54,7 +66,8 @@ describe("addition of a new blog", () => {
 
   test("fails with no title nor url (under logged in state)", async () => {
     const res = await api
-      .post("/api/blogs")
+      //.post("/api/blogs")
+      .post("/blogs")
       .set("Authorization", `bearer ${helper.rootUserToken}`)
       .send(helper.aNewBlogWithoutTitleNorUrl)
       .expect(400)
@@ -62,7 +75,8 @@ describe("addition of a new blog", () => {
 
   test("fails without token", async () => {
     await api
-      .post("/api/blogs")
+      //.post("/api/blogs")
+      .post("/blogs")
       .send(helper.aNewBlogWithContentAndNoLikes)
       .expect(401)
   })
@@ -98,7 +112,8 @@ describe("deletion of a blog", () => {
   //    const res = await api.delete(`/api/blogs/${id}`).expect(204)
   //  })
   test("fails with an invalid blog id", async () => {
-    const res = await api.delete("/api/blogs/INVALID_ID").expect(400)
+    //const res = await api.delete("/api/blogs/INVALID_ID").expect(400)
+    const res = await api.delete("/blogs/INVALID_ID").expect(400)
   })
 })
 
@@ -111,7 +126,9 @@ describe("update the info of a blog", () => {
     const likes = blogs[randIdx].likes
     //    console.log(id, likes)
     const res = await api
-      .put(`/api/blogs/${id}`)
+      //.put(`/api/blogs/${id}`)
+      .put(`/blogs/${id}`)
+      .set("Authorization", `bearer ${helper.rootUserToken}`)
       .send({ likes: likes + 1 })
       .expect(200)
     //    const blogAtEnd = await Blog.findById(id)
