@@ -10,7 +10,7 @@
     "logs:prod": "heroku logs --tail",
     "lint": "eslint .",
     "test": "NODE_ENV=test jest --verbose --runInBand",
-	"start:test": "NODE_ENV=test node index.js"
+    "start:test": "NODE_ENV=test node index.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -23,7 +23,7 @@
     "mongoose-unique-validator": "^3.0.0"
   },
   "devDependencies": {
-    "jest": "^27.4.5",
+    "jest": "^28.1.0",
     "lodash": "^4.17.21",
     "nodemon": "^2.0.15",
     "supertest": "^6.1.6"
